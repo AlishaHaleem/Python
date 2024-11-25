@@ -49,3 +49,4 @@ elif computer_choice == user_choice:
     print("You Draw!")
 elif user_choice >= 3 or user_choice < 0:
     print("You type an invalid number. You lose!")
+print("you lose")
