@@ -23,6 +23,31 @@ def decrypt(plain_text,shift_amount):
     print(f"The decoded text is {output_text}")
 
 
+
+# TODO:
+def ceaser(plain_text,shift_amount , encode_or_decode):
+    output_text = ""
+    for letter in plain_text:
+        if encode_or_decode == "decode":
+            shift_amount *= -1
+
+
+
+
+
+        position = alphabet.index(letter) + shift_amount
+        position %= len(alphabet)
+        output_text += alphabet[position]
+    print(f"The decoded text is {output_text}")
+
+
+
+
+
+
+
+
+
 #TODO: Inside the 'encrypt' function, shift each letter of the 'text'
 # forwards in the alphabet by the shift amount and print the encrypted text.
 encrypt(plain_text=text,shift_amount=shift)
