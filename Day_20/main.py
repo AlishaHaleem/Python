@@ -5,18 +5,19 @@ import time
 from scoreboard import Scoreboard
 
 screen = Screen()
+screen.bgcolor("black")
 screen.setup(width=800, height=600)
 screen.title("Pong")
 screen.tracer(0)
 
 r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
-ball = Ball()
+ball = Ball((0 , 0))
 scoreboard = Scoreboard()
 
 screen.listen()
-screen.onkey(r_paddle.go_up,"UP")
-screen.onkey(r_paddle.go_down,"DOWN")
+screen.onkey(r_paddle.go_up,"Up")
+screen.onkey(r_paddle.go_down,"Down")
 screen.onkey(l_paddle.go_up,"w")
 screen.onkey(l_paddle.go_down,"s")
 
@@ -35,10 +36,12 @@ while game_is_on:
 
     if ball.xcor() > 380:
         ball.reset_position()
+        scoreboard.l_point()
 
 
     if ball.xcor() < -380:
         ball.reset_position()
+        scoreboard.r_point()
 
 
 screen.exitonclick()
