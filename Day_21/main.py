@@ -1,8 +1,12 @@
 import time
 from turtle import Screen
 from player import Player
+# TODO;
 from car_manager import CarManager
 from scoreboard import Scoreboard
+
+player = Player()
+car_manager = CarManager() #TODO
 
 screen = Screen()
 screen.setup(width=600, height=600)
